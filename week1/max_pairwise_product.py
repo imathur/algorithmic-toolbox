@@ -5,9 +5,8 @@ assert(len(a) == n)
 
 result = 0
 
-for i in range(0, n):
-    for j in range(i+1, n):
-        if a[i]*a[j] > result:
-            result = a[i]*a[j]
+highest = a.pop(a.index(max(a)))
+secondhighest = max(a)
 
+result = highest*secondhighest
 print(result)
