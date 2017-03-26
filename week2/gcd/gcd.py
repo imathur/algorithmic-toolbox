@@ -9,8 +9,13 @@ def gcd_naive(a, b):
                 current_gcd = d
 
     return current_gcd
+    
+def gcd_euclidean(a, b):
+    if b == 0:
+        return a
+    a_ = a % b
+    return gcd_euclidean(b, a_)
 
 if __name__ == "__main__":
-    input = sys.stdin.read()
-    a, b = map(int, input.split())
-    print(gcd_naive(a, b))
+    a, b = int(sys.argv[1]), int(sys.argv[2])
+    print(gcd_euclidean(a, b))
