@@ -24,5 +24,6 @@ def get_fibonacci_last_digit(n):
     return new
 
 if __name__ == '__main__':
-    n = int(sys.argv[1])
-    print(get_fibonacci_last_digit(n))
+    input = sys.stdin.read()
+    n = int(input)
+    print(get_fibonacci_last_digit_naive(n))

@@ -17,5 +17,6 @@ def gcd_euclidean(a, b):
     return gcd_euclidean(b, a_)
 
 if __name__ == "__main__":
-    a, b = int(sys.argv[1]), int(sys.argv[2])
-    print(gcd_euclidean(a, b))
+    input = sys.stdin.read()
+    a, b = map(int, input.split())
+    print(gcd_naive(a, b))
