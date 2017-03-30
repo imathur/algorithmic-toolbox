@@ -36,20 +36,11 @@ def get_pisano_period(n, m):
     Thus need to find the value of i where the above condition is valid.
     period = i that satisfies condition.
     '''
-    fib_numbers = [0, 1, 1]
-    modulos = [0, 1, 1]
-    period = None
-     
-    for i in range(2): print('i= {}\tfib= {}\tmod{}= {}'.format(i, fib_numbers[i], m, modulos[i]))
-    
-    for i in range(2, n+1, 1):
-        fib_numbers.append(fib_numbers[i-1] + fib_numbers[i-2])
-        modulos.append(fib_numbers[i] % m)
-        print('i= {}\tfib= {}\tmod{}= {}'.format(i, fib_numbers[i], m, modulos[i]))
-        if fib_numbers[i] == 1 and fib_numbers[i-1] == 0:
-            period = i-1
-            break
-    return period
+    modulos = [0, 1]
+    while True:
+        modulos.append((modulos[-1] + modulos[-2])%m)
+        if modulos[-1] == 1 and modulos[-2] == 0:
+            return len(modulos)-2
     
 
 def get_fibonacci_huge_efficient(n, m):
