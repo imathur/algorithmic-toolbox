@@ -52,10 +52,9 @@ def get_fibonacci_huge_efficient(n, m):
     fib_small = calc_fib_efficient(n_)
     mod = fib_small % m
     
-    print('period={}, n_={}, fib_small={}'.format(period, n_, fib_small))
-    
     return mod
 
+'''
 n, m = int(sys.argv[1]), int(sys.argv[2])
 print('remainder = {}'.format(get_fibonacci_huge_efficient(n, m)))
 
@@ -63,7 +62,7 @@ print('remainder = {}'.format(get_fibonacci_huge_efficient(n, m)))
 if __name__ == '__main__':
     input = sys.stdin.read();
     n, m = map(int, input.split())
-    print(get_fibonacci_huge_naive(n, m))
-'''
+    print(get_fibonacci_huge_efficient(n, m))
+
 
 
