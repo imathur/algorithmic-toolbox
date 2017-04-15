@@ -1,13 +1,16 @@
 #Uses python3
 
 import sys
+import numpy as np
 
 def max_dot_product(a, b):
     #write your code here
-    res = 0
-    for i in range(len(a)):
-        res += a[i] * b[i]
-    return res
+    # res = 0
+    # for i in range(len(a)):
+    #     res += a[i] * b[i]
+    # return res
+
+    return np.dot(sorted(a), sorted(b))
 
 if __name__ == '__main__':
     input = sys.stdin.read()
